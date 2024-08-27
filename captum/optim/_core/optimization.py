@@ -184,7 +184,7 @@ def n_steps(n: int, show_progress: bool = True) -> StopCriteria:
         if len(history) > 0:
             if show_progress:
                 pbar.set_postfix(
-                    {"Objective": f"{history[-1].mean():.1f}"}, refresh=False
+                    {"Objective": f"{history[-1].mean().item():.1f}"}, refresh=False
                 )
         if step < n:
             if show_progress:
