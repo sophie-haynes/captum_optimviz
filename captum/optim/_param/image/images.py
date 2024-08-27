@@ -173,6 +173,16 @@ class ImageTensor(torch.Tensor):
             padding=padding,
             pad_value=pad_value,
         )
+    @property
+    def data(self) -> torch.Tensor:
+        """
+        Returns the underlying tensor data.
+
+        Returns:
+           torch.Tensor: The tensor data contained in the `ImageTensor`.
+        """
+        return self.detach()
+
 
 
 class InputParameterization(torch.nn.Module):
